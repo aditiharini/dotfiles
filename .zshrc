@@ -62,7 +62,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(git) 
 
 source $ZSH/oh-my-zsh.sh
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 POWERLEVEL9K_ALWAYS_SHOW_USER=true
