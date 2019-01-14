@@ -6,6 +6,8 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GOBIN=$GOPATH/bin
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/aditisri/.oh-my-zsh
@@ -13,7 +15,8 @@ export ZSH=/Users/aditisri/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE='nerdfont-complete'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -56,11 +59,23 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
+plugins=(git) 
 
 source $ZSH/oh-my-zsh.sh
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
+POWERLEVEL9K_ALWAYS_SHOW_USER=true
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+POWERLEVEL9K_USER_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_USER_ROOT_FOREGROUND='white'
+POWERLEVEL9K_USER_SUDO_FOREGROUND='white'
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND='white'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='204'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='204'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='204'
+POWERLEVEL9K_DIR_ETC_BACKGROUND='204'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -89,11 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
- prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 039 black "%(!.%{%F{yellow}%}.)$USER"
-  fi
-}
 
 
 . /Users/aditisri/torch/install/bin/torch-activate
@@ -107,3 +117,4 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias ls='ls -G'
