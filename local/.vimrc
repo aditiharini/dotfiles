@@ -16,6 +16,7 @@ set hlsearch
 set wildmenu
 set modifiable
 set termguicolors
+set mouse=a
 
 inoremap <Up> <Nop>	
 inoremap <Down> <Nop>
@@ -28,6 +29,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Del> <Nop>
+
 
 let g:solarized_termcolors=256
 syntax on 
@@ -60,6 +62,7 @@ Plugin 'archseer/colibri.vim'
 "Plugin 'crusoexia/vim-dracula'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -75,3 +78,4 @@ set laststatus=2
 "endif
 colorscheme colibri
 syntax on 
+
