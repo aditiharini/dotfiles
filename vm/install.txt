@@ -1,0 +1,4 @@
+(in progress)
+-zsh
+-oh-my-zsh
+-vundle
